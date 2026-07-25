@@ -1,0 +1,20 @@
+{
+  "name": "page-pulse",
+  "version": "1.0.0",
+  "description": "Audits a URL and reports HTTP status, response time, title, meta description, H1 count, missing alt text, and word count.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test test/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.19.2"
+  }
+}
