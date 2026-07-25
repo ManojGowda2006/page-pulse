@@ -1,0 +1,162 @@
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --border: #2a2e37;
+  --text: #e7e9ee;
+  --muted: #9aa1ad;
+  --accent: #5b8cff;
+  --error: #ff6b6b;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.page {
+  flex: 1;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0;
+}
+
+.audit-form {
+  display: flex;
+  gap: 10px;
+}
+
+#url-input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+#url-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+#submit-btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: #0b1020;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+#submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-area {
+  margin-top: 20px;
+  min-height: 1.5em;
+}
+
+.loading {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--error);
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  padding: 12px 14px;
+  border-radius: var(--radius);
+}
+
+.report {
+  margin-top: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.report-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.report-item .label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.report-item .value {
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.hidden {
+  display: none;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .audit-form {
+    flex-direction: column;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}

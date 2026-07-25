@@ -2,10 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page Pulse</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <h1>Page Pulse</h1>
-  <p>Scaffold in progress — UI lands in a later branch.</p>
+  <main class="page">
+    <header class="page-header">
+      <h1>Page Pulse</h1>
+      <p class="tagline">Paste a URL, get an instant audit: status, speed, SEO basics, and accessibility gaps.</p>
+    </header>
+
+    <form id="audit-form" class="audit-form">
+      <input
+        type="url"
+        id="url-input"
+        name="url"
+        placeholder="https://example.com"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" id="submit-btn">Audit</button>
+    </form>
+
+    <section id="status-area" class="status-area" aria-live="polite">
+      <p id="loading" class="loading hidden">Auditing…</p>
+      <p id="error" class="error hidden"></p>
+    </section>
+
+    <section id="report" class="report hidden" aria-live="polite">
+      <div class="report-grid">
+        <div class="report-item">
+          <span class="label">HTTP status</span>
+          <span class="value" id="r-status"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Response time</span>
+          <span class="value" id="r-time"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Title</span>
+          <span class="value" id="r-title"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Meta description</span>
+          <span class="value" id="r-meta"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">H1 count</span>
+          <span class="value" id="r-h1"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Images missing alt</span>
+          <span class="value" id="r-alt"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Word count</span>
+          <span class="value" id="r-words"></span>
+        </div>
+        <div class="report-item">
+          <span class="label">Content type</span>
+          <span class="value" id="r-content-type"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://digitalheroesco.com" target="_blank" rel="noopener">Built for Digital Heroes Training Task</a>
+  </footer>
+
+  <script src="/app.js"></script>
 </body>
 </html>
