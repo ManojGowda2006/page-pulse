@@ -107,6 +107,21 @@ for a deliberately decorative image, per WCAG) is currently counted the
 same as a missing `alt` attribute entirely. A stricter version would treat
 those differently; flagging it here rather than silently overcounting.
 
+## Pull request history
+
+Built as one reviewed PR per feature rather than a single commit dump. Each
+was manually tested before merging — happy path and error cases exercised
+via Bruno/curl and a real browser, with a screenshot attached to the PR as
+verification.
+
+| # | PR | What it added |
+|---|---|---|
+| 1 | [Scaffold Express app with static serving and health check](https://github.com/ManojGowda2006/page-pulse/pull/1) | Base Express app, static file serving, `/api/health` |
+| 2 | [Add POST /api/audit with fetch + cheerio parsing](https://github.com/ManojGowda2006/page-pulse/pull/2) | Core audit endpoint, happy-path parsing |
+| 3 | [Add typed errors for invalid URL, timeout, non-HTML, and unreachable host](https://github.com/ManojGowda2006/page-pulse/pull/3) | Proper error handling with distinct HTTP status codes |
+| 4 | [Add frontend UI: form, loading/error states, report rendering](https://github.com/ManojGowda2006/page-pulse/pull/4) | User-facing UI + required footer credit line |
+| 5 | [Add tests for analyzePage: happy path + 3 failure cases](https://github.com/ManojGowda2006/page-pulse/pull/5) | Test suite (mocked `fetch`, no network calls) |
+
 ## Live build
 
 Deployed at: _add live URL once deployed_
