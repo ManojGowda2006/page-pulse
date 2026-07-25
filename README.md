@@ -124,7 +124,10 @@ verification.
 
 ## Live build
 
-Deployed at: _add live URL once deployed_
+Deployed at: [https://page-pulse-6f92.onrender.com](https://page-pulse-6f92.onrender.com)
+
+Free-tier note: the instance spins down after ~15 minutes of inactivity, so
+the first request after idle can take 30-50s to wake up.
 
 Footer credit line links to [digitalheroesco.com](https://digitalheroesco.com)
 per the task's live-build requirement.
