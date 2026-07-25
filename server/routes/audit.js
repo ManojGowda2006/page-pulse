@@ -1,5 +1,6 @@
 const express = require('express');
 const { analyzePage } = require('../lib/analyze');
+const { AuditError } = require('../lib/errors');
 
 const router = express.Router();
 
@@ -14,8 +15,10 @@ router.post('/', async (req, res) => {
     const report = await analyzePage(url);
     res.json(report);
   } catch (err) {
-    // Typed errors with proper status codes land in the next branch;
-    // this keeps the happy path shippable without crashing on bad input.
+    if (err instanceof AuditError) {
+      return res.status(err.status).json({ error: err.message });
+    }
+    console.error(err);
     res.status(500).json({ error: 'Failed to audit the given URL.' });
   }
 });
